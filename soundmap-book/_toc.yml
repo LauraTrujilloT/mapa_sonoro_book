@@ -4,12 +4,11 @@
 format: jb-book
 root: intro
 parts:
-- caption: Introduction
+- caption: How to Install
   chapters:
-    - file: chapters/chap1_2
-- caption: Time Series Analysis
+    - file: chapters/installation.md
+- caption: Documentation
   chapters:
-    - file: chapters/chap3_intro
-    - file: chapters/chap3_sql
-    - file: chapters/chap3_analysis
+    - file: chapters/about_app.md
+    - file: chapters/about_viz.md
 
