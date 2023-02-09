@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Introduction
+  chapters:
+    - file: chapters/chap1_2
+- caption: Time Series Analysis
+  chapters:
+    - file: chapters/chap3_intro
+    - file: chapters/chap3_sql
+    - file: chapters/chap3_analysis
+
