@@ -5,6 +5,17 @@ title: Quick Documentation of Soundmap of Colombia Dash App
 author: Laura Trujillo T
 logo: logo.png
 
+# the name of your GitHub Repo. 
+# If there is no subpath for your site, use an empty string ""  
+baseurl: "/soundmap_book" #@@@ CHANGE THIS -5 @@@#
+
+
+# the base hostname & protocol for your site. 
+# Since we are deloying on GitHub pages, the URL has the format:
+# "https://your-github-username.github.io/" 
+# In my case is:
+url: "https://soundmap-book.github.io/" #@@@ CHANGE THIS - 6 @@@#
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
