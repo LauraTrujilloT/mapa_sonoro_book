@@ -27,7 +27,7 @@ git config --global user.email "example@example.com"
    git clone https://github.com/LauraTrujilloT/mapa_sonoro_app.git
    ```
 
-# Run the app on local
+## Run the app on local
 
 5. Go to the folder `mapa_sonoro_app`
    
