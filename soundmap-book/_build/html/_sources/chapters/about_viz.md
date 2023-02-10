@@ -4,6 +4,8 @@
 
 ![colombia_map](https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_map.png)
 
+**Code Snippet**
+
 ```python
  col_fig = px.scatter_geo(
                         col_df.dropna(), 
@@ -129,4 +131,18 @@
                 yref='y',
                 showarrow=False,
     )
+```
+
+## Colombia Native Languages Table
+
+![col_table](https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_table.png)
+
+**Code Snippet**
+
+```python 
+col_table = col_df[['departamento', 'nombre_lengua','vitalidad']].\
+        sort_values(['departamento','nombre_lengua'], ascending=(True,True))
+    col_table['departamento'] = col_table['departamento'].str.capitalize()
+    col_table.rename(columns={'departamento':'State', 'nombre_lengua':'Language', 'Vitalidad':'Status'},inplace=True)
+    table_cols = [{'name':i.replace('_', ' ').capitalize(), 'id':i} for i in col_table.columns]
 ```

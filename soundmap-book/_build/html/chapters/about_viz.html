@@ -327,6 +327,11 @@ title="Print to PDF"
    Indicators Chart
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colombia-native-languages-table">
+   Colombia Native Languages Table
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -356,6 +361,11 @@ title="Print to PDF"
    Indicators Chart
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colombia-native-languages-table">
+   Colombia Native Languages Table
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -371,6 +381,7 @@ title="Print to PDF"
 <section id="colombia-map-chart">
 <h2>Colombia Map Chart<a class="headerlink" href="#colombia-map-chart" title="Permalink to this headline">#</a></h2>
 <p><img alt="colombia_map" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_map.png" /></p>
+<p><strong>Code Snippet</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">col_fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_geo</span><span class="p">(</span>
                         <span class="n">col_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> 
                         <span class="n">lat</span><span class="o">=</span><span class="n">col_df</span><span class="p">[</span><span class="s2">&quot;municipio_latitud&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> 
@@ -493,6 +504,18 @@ title="Print to PDF"
                 <span class="n">yref</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
                 <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="colombia-native-languages-table">
+<h2>Colombia Native Languages Table<a class="headerlink" href="#colombia-native-languages-table" title="Permalink to this headline">#</a></h2>
+<p><img alt="col_table" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_table.png" /></p>
+<p><strong>Code Snippet</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">col_table</span> <span class="o">=</span> <span class="n">col_df</span><span class="p">[[</span><span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre_lengua&#39;</span><span class="p">,</span><span class="s1">&#39;vitalidad&#39;</span><span class="p">]]</span><span class="o">.</span>\
+        <span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;departamento&#39;</span><span class="p">,</span><span class="s1">&#39;nombre_lengua&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">col_table</span><span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col_table</span><span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+    <span class="n">col_table</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;departamento&#39;</span><span class="p">:</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre_lengua&#39;</span><span class="p">:</span><span class="s1">&#39;Language&#39;</span><span class="p">,</span> <span class="s1">&#39;Vitalidad&#39;</span><span class="p">:</span><span class="s1">&#39;Status&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">table_cols</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">col_table</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
