@@ -380,6 +380,8 @@ title="Print to PDF"
 <h1>About Data Visualizations<a class="headerlink" href="#about-data-visualizations" title="Permalink to this headline">#</a></h1>
 <section id="colombia-map-chart">
 <h2>Colombia Map Chart<a class="headerlink" href="#colombia-map-chart" title="Permalink to this headline">#</a></h2>
+<p>This visualization shows the different native languages in Colombia as of 2022 (collected by <em>Ministerio de Cultura de Colombia</em>), and their vitality status (in risk of becoming extinct or in a vulnerable state).</p>
+<p>Every native language has been recorded for a particular department of Colombia, however for the sake of visualization every native language belonging to a department was randomly spread within the geographical boundaries of such department (i.e if there are 5 different native languages in Amazonas, those 5 languages were randomly spread within Amazonas). In other words, exact location of a native language is not available, <strong>the data only shows the department location</strong>.</p>
 <p><img alt="colombia_map" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_map.png" /></p>
 <p><strong>Code Snippet</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">col_fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_geo</span><span class="p">(</span>
@@ -462,6 +464,7 @@ title="Print to PDF"
 </section>
 <section id="indicators-chart">
 <h2>Indicators Chart<a class="headerlink" href="#indicators-chart" title="Permalink to this headline">#</a></h2>
+<p>The Indicators chart shows 3 basic values describing the numbers of speakers, locals and number of different native languages in our territory, Colombia collected in the dataset.</p>
 <p><img alt="indicator" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/indicators.png" /></p>
 <p><strong>Code Snippet</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">col_df</span> <span class="o">=</span> <span class="n">col_dataframe</span><span class="p">()</span>
