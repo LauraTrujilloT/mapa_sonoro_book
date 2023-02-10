@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Installation Guide &#8212; Quick Documentation of Soundmap of Colombia Dash App</title>
+    <title>Installation Guide &#8212; Soundmap of Colombia Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Quick Documentation of Soundmap of Colombia Dash App</h1>
+      <h1 class="site-logo" id="site-title">Soundmap of Colombia Documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -214,7 +214,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/LauraTrujilloT/mapa_sonoro_app"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -231,7 +231,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/installation.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/LauraTrujilloT/mapa_sonoro_app/issues/new?title=Issue%20on%20page%20%2Fchapters/installation.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -296,12 +296,53 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Installation Guide
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-git">
+     Install Git
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-a-git-repo">
+     Clone a Git Repo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-app-on-local">
+   Run the app on local
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -313,6 +354,36 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Installation Guide
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-git">
+     Install Git
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone-a-git-repo">
+     Clone a Git Repo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-the-app-on-local">
+   Run the app on local
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -322,6 +393,46 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="installation-guide">
 <h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">#</a></h1>
+<p>The <em>Soundmap of Colombia</em> Dash App is available for installation via a <a class="reference external" href="https://github.com/LauraTrujilloT/mapa_sonoro_app">Github Repository</a>.</p>
+<section id="install-git">
+<h2>Install Git<a class="headerlink" href="#install-git" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Install</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Configure credentials (username and mail)</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;My Username&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;example@example.com&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="clone-a-git-repo">
+<h2>Clone a Git Repo<a class="headerlink" href="#clone-a-git-repo" title="Permalink to this headline">#</a></h2>
+<ol>
+<li><p>Open your terminal</p></li>
+<li><p>Use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> </code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>https://github.com/LauraTrujilloT/mapa_sonoro_app.git
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="run-the-app-on-local">
+<h1>Run the app on local<a class="headerlink" href="#run-the-app-on-local" title="Permalink to this headline">#</a></h1>
+<ol>
+<li><p>Go to the folder <code class="docutils literal notranslate"><span class="pre">mapa_sonoro_app</span></code></p></li>
+<li><p>Open your terminal and type</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>index.py<span class="w"> </span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
