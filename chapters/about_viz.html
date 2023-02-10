@@ -295,12 +295,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colombia-map-chart">
+   Colombia Map Chart
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indicators-chart">
+   Indicators Chart
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colombia-native-languages-table">
+   Colombia Native Languages Table
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -312,6 +346,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colombia-map-chart">
+   Colombia Map Chart
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indicators-chart">
+   Indicators Chart
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colombia-native-languages-table">
+   Colombia Native Languages Table
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -321,6 +378,147 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="about-data-visualizations">
 <h1>About Data Visualizations<a class="headerlink" href="#about-data-visualizations" title="Permalink to this headline">#</a></h1>
+<section id="colombia-map-chart">
+<h2>Colombia Map Chart<a class="headerlink" href="#colombia-map-chart" title="Permalink to this headline">#</a></h2>
+<p><img alt="colombia_map" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_map.png" /></p>
+<p><strong>Code Snippet</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">col_fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_geo</span><span class="p">(</span>
+                        <span class="n">col_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> 
+                        <span class="n">lat</span><span class="o">=</span><span class="n">col_df</span><span class="p">[</span><span class="s2">&quot;municipio_latitud&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> 
+                        <span class="n">lon</span><span class="o">=</span><span class="n">col_df</span><span class="p">[</span><span class="s2">&quot;municipio_longitud&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>     
+                        <span class="n">color</span><span class="o">=</span><span class="n">col_df</span><span class="p">[</span><span class="s2">&quot;vitalidad&quot;</span><span class="p">],</span> 
+                        <span class="n">size</span><span class="o">=</span><span class="n">bubble_size</span><span class="p">,</span>
+                        <span class="n">size_max</span><span class="o">=</span><span class="n">bubble_max</span><span class="p">,</span>
+                        <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                        <span class="n">center</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lat&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">72.5</span><span class="p">},</span>
+                        <span class="n">opacity</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+                        <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;south america&#39;</span><span class="p">,</span>
+                        <span class="n">color_discrete_map</span><span class="o">=</span><span class="p">{</span>
+                                            <span class="s1">&#39;Critically Endangered&#39;</span><span class="p">:</span><span class="s1">&#39;#A90639&#39;</span><span class="p">,</span><span class="c1">#&#39;rgb(250, 87, 98)&#39;,</span>
+                                            <span class="s1">&#39;Endangered&#39;</span><span class="p">:</span> <span class="s1">&#39;#e60049&#39;</span><span class="p">,</span><span class="c1">#&#39;#96dae8&#39;</span>
+                                            <span class="s1">&#39;Vulnerable&#39;</span><span class="p">:</span> <span class="s1">&#39;#FFE15D&#39;</span><span class="p">,</span><span class="c1">#&#39;#FFF600&#39;,#&#39;#FFE15D&#39;,</span>
+                                    <span class="p">},</span>
+                        <span class="n">custom_data</span><span class="o">=</span><span class="p">[</span><span class="n">col_df</span><span class="p">[</span><span class="s2">&quot;n_hablantes&quot;</span><span class="p">],</span> <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;n_habitantes&#39;</span><span class="p">],</span> 
+                            <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;familia_linguistica&#39;</span><span class="p">],</span> <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;nombre_lengua&#39;</span><span class="p">],</span>
+                            <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;pct_hablantes&#39;</span><span class="p">],</span> <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;pct_habitantes&#39;</span><span class="p">],</span> <span class="n">bubble_size</span><span class="p">,</span> <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;lengua_ratio&#39;</span><span class="p">],</span>
+                            <span class="n">col_df</span><span class="p">[</span><span class="s1">&#39;properties.NOMBRE_DPT&#39;</span><span class="p">]</span>
+                            <span class="p">],</span>
+                    <span class="p">)</span>
+    
+    <span class="n">choropleth_col</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+                                <span class="n">col_geojson_</span><span class="p">,</span>
+                                <span class="n">geojson</span><span class="o">=</span><span class="n">deptos</span><span class="p">,</span>
+                                <span class="n">locations</span><span class="o">=</span><span class="s1">&#39;properties.DPTO&#39;</span><span class="p">,</span>
+                                <span class="n">featureidkey</span><span class="o">=</span><span class="s1">&#39;properties.DPTO&#39;</span><span class="p">,</span>
+                                <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;mercator&#39;</span><span class="p">,</span>
+                                <span class="n">height</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                                <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="n">colormap</span><span class="p">]</span>
+                            <span class="p">)</span>
+    <span class="n">choropleth_col</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
+        <span class="n">hoverinfo</span><span class="o">=</span><span class="s1">&#39;skip&#39;</span><span class="p">,</span>
+        <span class="n">hovertemplate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">marker_line_width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">marker_line_color</span><span class="o">=</span><span class="s1">&#39;#8daad6&#39;</span><span class="p">)</span>
+    <span class="n">choropleth_col</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span><span class="n">fitbounds</span><span class="o">=</span><span class="s1">&#39;locations&#39;</span><span class="p">,</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">col_fig</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span><span class="n">fitbounds</span><span class="o">=</span><span class="s1">&#39;locations&#39;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#f8f9fa&#39;</span><span class="p">)</span>
+
+    <span class="n">col_fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
+                    <span class="n">hovertemplate</span><span class="o">=</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+                        <span class="s2">&quot;&lt;I&gt; %</span><span class="si">{customdata[8]}</span><span class="s2">&lt;/I&gt;&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;&lt;b&gt; %</span><span class="si">{customdata[2]}</span><span class="s2"> Family&lt;/b&gt; - %</span><span class="si">{customdata[3]}</span><span class="s2">&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;&lt;b&gt;Speakers:&lt;/b&gt; %</span><span class="si">{customdata[0]:,}</span><span class="s2"> (%Total %</span><span class="si">{customdata[5]:.2}</span><span class="s2">%)&quot;</span><span class="p">,</span> 
+                        <span class="s2">&quot;&lt;b&gt;Locals:&lt;/b&gt; %</span><span class="si">{customdata[1]:,}</span><span class="s2"> (%Total %</span><span class="si">{customdata[4]:.2}</span><span class="s2">%)&quot;</span><span class="p">,</span>
+                        <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">legend_title</span><span class="si">}</span><span class="s2">&lt;/b&gt;: &quot;</span> <span class="o">+</span> <span class="s2">&quot;%</span><span class="si">{customdata[6]:.2}</span><span class="s2">&quot;</span>
+                        <span class="p">]),</span>
+                    <span class="n">marker_sizemin</span><span class="o">=</span><span class="mi">4</span>
+    <span class="p">)</span>
+    <span class="n">col_fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">choropleth_col</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">col_fig</span><span class="o">.</span><span class="n">frames</span><span class="p">):</span>
+        <span class="n">col_fig</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">+=</span> <span class="p">(</span><span class="n">choropleth_col</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],)</span>
+
+    <span class="n">col_fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> 
+        <span class="n">title</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Colombia Map&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span>
+            <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.98</span><span class="p">,</span>
+            <span class="s1">&#39;xanchor&#39;</span><span class="p">:</span><span class="s1">&#39;center&#39;</span>
+            <span class="p">},</span>
+        <span class="n">showlegend</span><span class="o">=</span><span class="n">legend_switch</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;orientation&#39;</span><span class="p">:</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;font&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">},</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;xanchor&#39;</span><span class="p">:</span><span class="s1">&#39;left&#39;</span>
+        <span class="p">},</span>
+        <span class="n">hoverlabel</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">},</span>
+            <span class="s1">&#39;bgcolor&#39;</span><span class="p">:</span><span class="s1">&#39;rgba(255,255,255,0.75)&#39;</span>
+            <span class="p">},</span>
+        <span class="n">paper_bgcolor</span><span class="o">=</span><span class="s1">&#39;#f8f9fa&#39;</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="indicators-chart">
+<h2>Indicators Chart<a class="headerlink" href="#indicators-chart" title="Permalink to this headline">#</a></h2>
+<p><img alt="indicator" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/indicators.png" /></p>
+<p><strong>Code Snippet</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">col_df</span> <span class="o">=</span> <span class="n">col_dataframe</span><span class="p">()</span>
+
+    <span class="n">trace1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Indicator</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">,</span>    
+        <span class="n">value</span><span class="o">=</span><span class="n">col_df</span><span class="o">.</span><span class="n">n_hablantes</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>    
+        <span class="n">domain</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]},</span>  
+        <span class="n">number</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;valueformat&#39;</span><span class="p">:</span><span class="s1">&#39;,r&#39;</span><span class="p">,</span> <span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">}},</span>  
+        <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Total Speakers&quot;</span><span class="p">,</span> <span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">}},</span>
+        <span class="p">)</span>
+    <span class="n">trace2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Indicator</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">,</span>    
+        <span class="n">value</span><span class="o">=</span><span class="n">col_df</span><span class="o">.</span><span class="n">nombre_lengua</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span>    
+        <span class="n">domain</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.66</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]},</span>  
+        <span class="n">number</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">}},</span>  
+        <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Languages&quot;</span><span class="p">,</span> <span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">}})</span>
+    <span class="n">trace3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Indicator</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">,</span>    
+        <span class="n">value</span><span class="o">=</span><span class="n">col_df</span><span class="o">.</span><span class="n">n_habitantes</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>    
+        <span class="n">domain</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.66</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">]},</span>  
+        <span class="n">number</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;valueformat&#39;</span><span class="p">:</span><span class="s1">&#39;,r&#39;</span><span class="p">,</span> <span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">}},</span> 
+        <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Total Locals&quot;</span><span class="p">,</span> <span class="s1">&#39;font&#39;</span><span class="p">:{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">}})</span>
+
+    <span class="c1"># layout and figure production</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+                    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">&#39;rgba(0,0,0,0)&#39;</span><span class="p">,</span>
+                    <span class="n">xaxis</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;showgrid&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;showticklabels&#39;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">:[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]},</span>
+                    <span class="n">yaxis</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;showgrid&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;showticklabels&#39;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">:[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]},</span>
+                    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+                    <span class="n">autosize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="c1">#height=100</span>
+                    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">trace1</span><span class="p">,</span> <span class="n">trace2</span><span class="p">,</span> <span class="n">trace3</span><span class="p">],</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_annotation</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s1">&#39;out of &lt;b&gt;48,258,494&lt;/b&gt; colombians &lt;I&gt;(DANE, 2018 Census)&lt;/I&gt;&#39;</span><span class="p">,</span>
+                <span class="n">x</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                <span class="n">xref</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+                <span class="n">yref</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+                <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="colombia-native-languages-table">
+<h2>Colombia Native Languages Table<a class="headerlink" href="#colombia-native-languages-table" title="Permalink to this headline">#</a></h2>
+<p><img alt="col_table" src="https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_table.png" /></p>
+<p><strong>Code Snippet</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">col_table</span> <span class="o">=</span> <span class="n">col_df</span><span class="p">[[</span><span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre_lengua&#39;</span><span class="p">,</span><span class="s1">&#39;vitalidad&#39;</span><span class="p">]]</span><span class="o">.</span>\
+        <span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;departamento&#39;</span><span class="p">,</span><span class="s1">&#39;nombre_lengua&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">col_table</span><span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col_table</span><span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+    <span class="n">col_table</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;departamento&#39;</span><span class="p">:</span><span class="s1">&#39;State&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre_lengua&#39;</span><span class="p">:</span><span class="s1">&#39;Language&#39;</span><span class="p">,</span> <span class="s1">&#39;Vitalidad&#39;</span><span class="p">:</span><span class="s1">&#39;Status&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">table_cols</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="n">i</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">col_table</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
