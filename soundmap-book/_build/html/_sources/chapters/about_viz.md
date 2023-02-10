@@ -2,6 +2,10 @@
 
 ## Colombia Map Chart
 
+This visualization shows the different native languages in Colombia as of 2022 (collected by _Ministerio de Cultura de Colombia_), and their vitality status (in risk of becoming extinct or in a vulnerable state). 
+
+Every native language has been recorded for a particular department of Colombia, however for the sake of visualization every native language belonging to a department was randomly spread within the geographical boundaries of such department (i.e if there are 5 different native languages in Amazonas, those 5 languages were randomly spread within Amazonas). In other words, exact location of a native language is not available, **the data only shows the department location**.
+
 ![colombia_map](https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/col_map.png)
 
 **Code Snippet**
@@ -85,6 +89,8 @@
 ```
 
 ## Indicators Chart
+
+The Indicators chart shows 3 basic values describing the numbers of speakers, locals and number of different native languages in our territory, Colombia collected in the dataset.
 
 ![indicator](https://raw.githubusercontent.com/LauraTrujilloT/mapa_sonoro_book/main/soundmap-book/indicators.png)
 
