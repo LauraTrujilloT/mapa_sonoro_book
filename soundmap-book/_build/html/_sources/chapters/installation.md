@@ -24,7 +24,7 @@ git config --global user.email "example@example.com"
    
 4. Use the command `git clone `
    ```shell
-   https://github.com/LauraTrujilloT/mapa_sonoro_app.git
+   git clone https://github.com/LauraTrujilloT/mapa_sonoro_app.git
    ```
 
 # Run the app on local
